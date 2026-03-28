@@ -1,3 +1,5 @@
+//teste de push
+
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 const W = canvas.width;
