@@ -1,5 +1,3 @@
-//teste de push
-
 const canvas = document.getElementById('c');
 const ctx = canvas.getContext('2d');
 const W = canvas.width;
@@ -54,9 +52,16 @@ function drawPitSign() {
   const px = cx - 240;
   const py = cy + 100;
   const armAngle = Math.sin(performance.now() / 600) * 0.35;
+  const scale = 0.8 + Math.sin(performance.now() / 800) * 0.1; // Escala dinâmica
 
   ctx.save();
   ctx.setTransform(1, 0, 0, 1, 0, 0);
+  
+  // Padrão T → Op → T: translada para o centro, aplica escala, translada de volta
+  ctx.translate(px, py);
+  ctx.scale(scale, scale);
+  ctx.translate(-px, -py);
+  
   ctx.fillStyle = '#2c2c2c';
   ctx.fillRect(px - 120, py - 14, 240, 28);
   ctx.fillStyle = '#eee';
@@ -110,7 +115,7 @@ function update() {
   drawPitSign();
 
   const leader = pathPoint(lapAngle);
-  const follower = pathPoint(lapAngle - 0.8);
+  const follower = pathPoint(lapAngle - 5);
 
   drawCar(leader.x, leader.y, leader.direction);
   drawCar(follower.x, follower.y, follower.direction);

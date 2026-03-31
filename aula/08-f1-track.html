@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>08 — Pista de Fórmula 1</title>
+  <title>08 — Pista de Fórmula 1 com Transformações Geométricas</title>
   <style>
     body {
       margin: 0;
@@ -20,13 +20,25 @@
       margin-top: 12px;
     }
     h1 { margin: 0; }
-    p { margin: 6px 0 0; }
+    p { margin: 6px 0 0; font-size: 13px; }
+    .requirements {
+      margin-top: 12px;
+      font-size: 12px;
+      background: #2d6b2d;
+      padding: 12px;
+      border-radius: 4px;
+      max-width: 920px;
+      color: #eee;
+    }
+    .requirements strong { color: #ffeb3b; }
   </style>
 </head>
 <body>
 <h1>Pista de Fórmula 1</h1>
-<p>Dois carros se seguem um atrás do outro na pista. Use ↑/↓ para acelerar/frear e SPACE para pausar.</p>
+<p>Simulação com translação, rotação, escala e composição de transformações.</p>
 <canvas id="c" width="920" height="520"></canvas>
+
+
 <script src="08-f1-track.js"></script>
 </body>
 </html>
